@@ -1,0 +1,37 @@
+allprojects {
+    buildscript {
+        ext.kotlin_version = '1.2.21'
+        ext.serialization_version = '0.2'
+        ext.kotlin_native_version = '0.6'
+        ext.openbakery_version = '0.15.1'
+        ext.ktlint_version = '0.14.0'
+        ext.junit_version = '4.11'
+        ext.mockito_core_version = '2.15.0'
+        ext.mockito_kotlin_version = '1.5.0'
+        ext.objectboxVersion = '1.4.1'
+
+        repositories {
+            google()
+            jcenter()
+            mavenCentral()
+            maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+            maven { url "https://kotlin.bintray.com/kotlinx" }
+            maven { url "http://objectbox.net/beta-repo/" }
+        }
+        dependencies {
+            classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+            classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
+        }
+    }
+
+    group = 'digital.wup.superhero-app'
+    version = '0.0.1-SNAPSHOT'
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "http://objectbox.net/beta-repo/" }
+    }
+}
